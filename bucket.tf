@@ -1,10 +1,13 @@
 # Create an S3 Bucket
 resource "aws_s3_bucket" "my_bucket_demo" {
-  bucket = "swiggy-bucket-terraform-project-demo-by-dj"
-
-  # Enable versioning
-  versioning {
-    enabled = true
-  }
+  bucket = "example-bucket"
+  # other bucket configuration here
 }
 
+resource "aws_s3_bucket_versioning" "my_bucket_demo_versioning" {
+  bucket = aws_s3_bucket.my_bucket_demo.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
