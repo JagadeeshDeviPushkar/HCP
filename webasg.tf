@@ -16,7 +16,7 @@ resource "aws_launch_template" "swiggy-web-template" {
   name_prefix   = "swiggy-web-template"
   image_id      = "ami-0f9708d1cd2cfee41"
   instance_type = "t3.micro"
-  key_name      = "3tierproject"
+  key_name      = "M-keypair"
   network_interfaces {
     associate_public_ip_address = true
     security_groups             = [aws_security_group.swiggy-ec2-asg-sg.id]
@@ -26,4 +26,5 @@ resource "aws_launch_template" "swiggy-web-template" {
     prevent_destroy = false
     ignore_changes  = all
   }
+
 }
