@@ -22,7 +22,7 @@ resource "aws_launch_template" "swiggy-app-template" {
   name_prefix   = "swiggy-app-template"
   image_id      = "ami-0f9708d1cd2cfee41"
   instance_type = "t3.micro"
-  key_name      = "M-keypair"
+  key_name      = "M-keypair.pem"
 
   network_interfaces {
     security_groups             = [aws_security_group.swiggy-ec2-asg-sg-app.id]
@@ -41,4 +41,5 @@ resource "aws_launch_template" "swiggy-app-template" {
     ignore_changes  = all
   }
 }
+
 
