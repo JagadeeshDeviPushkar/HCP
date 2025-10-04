@@ -1,6 +1,6 @@
 # Create an S3 Bucket
 resource "aws_s3_bucket" "my_bucket_demo" {
-  bucket = "example-bucket"
+  bucket = "example-bucket-30091998"
   # other bucket configuration here
 }
 
@@ -11,3 +11,4 @@ resource "aws_s3_bucket_versioning" "my_bucket_demo_versioning" {
     status = "Enabled"
   }
 }
+
